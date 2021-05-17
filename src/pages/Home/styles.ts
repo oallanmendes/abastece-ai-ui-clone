@@ -23,13 +23,13 @@ export const Logo = styled.Image`
 `;
 
 export const MenuButton = styled.TouchableOpacity`
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
   border-color: #A5B2BB;
-  border-width: 2px;
+  border-width: 1px;
   margin-right: 15px;
 `;
 
@@ -38,8 +38,8 @@ export const Icon = styled(FeatherIcons)`
 `;
 
 export const NotificationBadge = styled.View`
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   background-color: #FF0042;
   position: absolute;
   right: -2px;

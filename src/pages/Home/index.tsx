@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   StatusBar,
-  StyleSheet,
   SafeAreaView,
   View,
   FlatList,
@@ -92,7 +91,11 @@ export default function Home() {
                 }>
                   <CardImage source={{uri: item.image}}/>
                   <CardHeader>{item.name}</CardHeader>
-                  <CardDescription numberOfLines={4}>{item.description}</CardDescription>
+                  <CardDescription
+                    numberOfLines={3}
+                    minimumFontScale={0.75}
+                    adjustsFontSizeToFit={true}
+                  >{item.description}</CardDescription>
               </Card>
           )}
         />
