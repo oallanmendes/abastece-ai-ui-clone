@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  StatusBar,
   FlatList,
   Alert,
   Text,
+  ScrollView,
 } from 'react-native';
 
 import {
@@ -90,7 +90,7 @@ export default function Home() {
 
   return (
     <>
-    <StatusBar barStyle={'dark-content'}/>
+    <ScrollView>
         <Header>
           <Logo source={require('../../assets/logo.png')}/>
           <MenuButton onPress={() => {
@@ -170,6 +170,7 @@ export default function Home() {
             )}
           />
         </News>
+    </ScrollView>
     </>
   );
 }

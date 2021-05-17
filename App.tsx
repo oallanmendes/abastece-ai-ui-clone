@@ -1,13 +1,13 @@
 import React from 'react'
 import Home from './src/pages/Home';
-import { SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 
 export default function App() {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ScrollView style={{flex: 1}}>
-        <Home />
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={{flex: 1 }} />
+      <StatusBar barStyle={'dark-content'} />
+      <Home />
+    </>
   );
 }
