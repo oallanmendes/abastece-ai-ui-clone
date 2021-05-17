@@ -8,6 +8,8 @@ interface CardProps {
   length: number;
 }
 
+export const ScrollView = styled.View``;
+
 export const Header = styled.View`
   display: flex;
   flex-direction: row;
@@ -17,8 +19,8 @@ export const Header = styled.View`
 `;
 
 export const Logo = styled.Image`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 5px;
 `;
 
@@ -52,12 +54,13 @@ export const Title = styled.Text`
     margin-left: 25px;
     margin-top: 25px;
     color: #03386E;
+    font-weight: bold;
   `
 
 export const Card = styled.TouchableOpacity<CardProps> `
   flex: 1%;     
   margin-left: 15px;
-  height: 300px;
+  height: 310px;
   width: 200px;
   border-radius: 20px;
   padding-left: 30px;

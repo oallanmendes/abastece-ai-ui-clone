@@ -4,10 +4,11 @@ import {
   SafeAreaView,
   View,
   FlatList,
-  ScrollView,
+  Alert,
 } from 'react-native';
 
 import {
+  ScrollView,
   Logo,
   MenuButton,
   Header,
@@ -58,9 +59,9 @@ export default function Home() {
 
   return (
     <>
-    <StatusBar barStyle={'dark-content'} />
-    <SafeAreaView style={{flex: 1}}>
-      <ScrollView style={{flex: 1}}>
+    <StatusBar barStyle={'dark-content'}/>
+    <ScrollView style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1, backgroundColor: '#d7e2s1'}}>
       <View>
         <Header>
           <Logo source={require('../../assets/logo.png')}/>
@@ -87,8 +88,8 @@ export default function Home() {
                 active={item.active}
                 onPress={() => {
                   console.log(index)
-                  console.log(item.color)}
-                }>
+                  Alert.alert('Mensagem', `"O card ${item.name}" foi clicado`)
+                }}>
                   <CardImage source={{uri: item.image}}/>
                   <CardHeader>{item.name}</CardHeader>
                   <CardDescription
@@ -100,8 +101,8 @@ export default function Home() {
           )}
         />
       </View>
-      </ScrollView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </ScrollView>
     </>
   );
 }
