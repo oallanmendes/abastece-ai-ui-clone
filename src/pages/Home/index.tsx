@@ -3,6 +3,7 @@ import {
   StatusBar,
   FlatList,
   Alert,
+  Text,
 } from 'react-native';
 
 import {
@@ -21,7 +22,7 @@ import {
   NewsImage,
 } from './styles';
 
-export default function Home() {
+export default function Home() {  
   const data = [
     {
       id: 1,
@@ -72,6 +73,21 @@ export default function Home() {
     },
   ]
 
+  const partners = [
+    {
+      id: 1,
+      image: 'https://images.unsplash.com/photo-1621036971881-8021a10b05e0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+    },
+    {
+      id: 2,
+      image: 'https://images.unsplash.com/photo-1595909336425-5bf541155dec?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80',
+    },
+    {
+      id: 3,
+      image: 'https://images.unsplash.com/photo-1621177555452-bedbe4c28879?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=632&q=80',
+    },
+  ]
+
   return (
     <>
     <StatusBar barStyle={'dark-content'}/>
@@ -93,7 +109,7 @@ export default function Home() {
           keyExtractor={(item) => String(item.id)}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
-          style={{marginTop: 80}}
+          style={{marginTop: 80, marginBottom: 50}}
           renderItem={({ item, index }) => (
               <Card
                 index={index}
@@ -112,7 +128,7 @@ export default function Home() {
           )}
         />
         <News>
-          <NewsHeader>Descubra onde ganhar cashback</NewsHeader>
+          <NewsHeader>{`Descubra onde\nganhar cashback`}</NewsHeader>
           <FlatList
             data={news}
             keyExtractor={(item) => String(item.id)}
@@ -122,6 +138,33 @@ export default function Home() {
                 <NewsImage
                   index={index}
                   length={news.length}
+                  source={{uri: item.image}}
+                />
+            )}
+          />
+        </News>
+
+        <News style={{backgroundColor: '#002D64'}}>
+          <NewsHeader style={{color: '#fff'}}>{`Aqui tem cashback\npra você aproveitar!`}</NewsHeader>
+          <Text 
+            style={{
+              fontSize: 18,
+              fontWeight: '500',
+              marginLeft: 25,
+              color: '#fff',
+              maxWidth: 320,
+              marginTop: 20,
+            }}
+          >Conheça os nossos parceiros e troque seus Km de vantagens por cashback de verdade!</Text>
+          <FlatList
+            data={partners}
+            keyExtractor={(item) => String(item.id)}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => (
+                <NewsImage
+                  index={index}
+                  length={partners.length}
                   source={{uri: item.image}}
                 />
             )}

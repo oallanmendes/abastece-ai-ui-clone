@@ -105,7 +105,6 @@ export const CardDescription = styled.Text`
 `
 
 export const News = styled.View`
-  margin-top: 50px;
   background-color: #F7C809;
   flex: 1;
   padding-bottom: 50px;
@@ -116,7 +115,6 @@ export const NewsHeader = styled.Text`
   font-weight: bold;
   margin-top: 40px;
   margin-left: 25px;
-  max-width: 180px;
   line-height: 30px;
 `;
 
