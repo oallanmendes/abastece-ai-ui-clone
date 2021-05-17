@@ -2,8 +2,11 @@ import styled, { css } from 'styled-components/native';
 import FeatherIcons from '@expo/vector-icons/Feather';
 
 interface CardProps {
-  active: boolean;
-  color: string;
+  index: number;
+  length: number;
+}
+
+interface ImageProps {
   index: number;
   length: number;
 }
@@ -100,3 +103,40 @@ export const CardDescription = styled.Text`
   color: #ffffff;
   font-weight: bold;
 `
+
+export const News = styled.View`
+  margin-top: 50px;
+  background-color: #F7C809;
+  flex: 1;
+  padding-bottom: 50px;
+`;
+
+export const NewsHeader = styled.Text`
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-left: 25px;
+  max-width: 180px;
+  line-height: 30px;
+`;
+
+export const NewsImage = styled.Image<ImageProps>`
+  border-radius: 15px;
+  width: 325px;
+  max-width: 325px;
+  height: 200px;
+  margin-left: 15px;
+  margin-top: 40px;
+
+  ${props =>
+    props.index === 0 &&
+    css`
+      margin-left: 25px;
+      background-color: #266BAC;
+  `}
+  ${props =>
+    props.index === props.length - 1 &&
+    css`
+      margin-right: 25px;
+  `}
+`;

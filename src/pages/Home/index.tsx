@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   StatusBar,
-  View,
   FlatList,
   Alert,
 } from 'react-native';
@@ -17,6 +16,9 @@ import {
   CardImage,
   Icon,
   NotificationBadge,
+  News,
+  NewsHeader,
+  NewsImage,
 } from './styles';
 
 export default function Home() {
@@ -55,13 +57,29 @@ export default function Home() {
     },
   ]
 
+  const news = [
+    {
+      id: 1,
+      image: 'https://images.unsplash.com/photo-1597578753991-f032f5cf859e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+    },
+    {
+      id: 2,
+      image: 'https://images.unsplash.com/photo-1621095058332-3c71ce927ee5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+    },
+    {
+      id: 3,
+      image: 'https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80',
+    },
+  ]
+
   return (
     <>
     <StatusBar barStyle={'dark-content'}/>
-      <View>
         <Header>
           <Logo source={require('../../assets/logo.png')}/>
-          <MenuButton>
+          <MenuButton onPress={() => {
+            Alert.alert('Mensagem', 'Leva ao seu perfil')
+          }}>
           <Icon
             name={'menu'}
             size={20}
@@ -80,8 +98,6 @@ export default function Home() {
               <Card
                 index={index}
                 length={data.length}
-                color={item.color}
-                active={item.active}
                 onPress={() => {
                   Alert.alert('Mensagem', `"O card ${item.name}" foi clicado`)
                 }}>
@@ -95,7 +111,22 @@ export default function Home() {
               </Card>
           )}
         />
-      </View>
+        <News>
+          <NewsHeader>Descubra onde ganhar cashback</NewsHeader>
+          <FlatList
+            data={news}
+            keyExtractor={(item) => String(item.id)}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => (
+                <NewsImage
+                  index={index}
+                  length={news.length}
+                  source={{uri: item.image}}
+                />
+            )}
+          />
+        </News>
     </>
   );
 }
