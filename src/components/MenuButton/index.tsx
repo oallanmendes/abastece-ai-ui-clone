@@ -8,7 +8,7 @@ interface MenuButtonProps extends TouchableOpacityProps {
   notificationNumber?: number;
 }
 
-const MenuButton:React.FC<MenuButtonProps> = ({icon, iconSize, notificationNumber, ...rest}) => {
+const MenuButton = ({icon, iconSize, notificationNumber, ...rest}: MenuButtonProps) => {
   return (
     <MenuButtonContainer {...rest}>
       <Icon

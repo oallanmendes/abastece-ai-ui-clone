@@ -21,8 +21,8 @@ export const NotificationBadge = styled.View`
   height: 20px;
   background-color: #FF0042;
   position: absolute;
-  right: -6px;
-  top: -6px;
+  right: -7.5px;
+  top: -7.5px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;

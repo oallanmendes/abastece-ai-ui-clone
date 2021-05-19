@@ -9,8 +9,7 @@ import { ThemeProvider } from 'styled-components';
 import { AppearanceProvider, useColorScheme } from 'react-native-appearance';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialIcons, Feather, Ionicons, Entypo, FontAwesome5 } from '@expo/vector-icons'; 
-
+import { MaterialIcons, Ionicons, Entypo, FontAwesome5 } from '@expo/vector-icons';
 import themes from './src/themes';
 
 const Tab = createBottomTabNavigator();
@@ -29,15 +28,16 @@ export default function App() {
             tabBarOptions={{
               activeTintColor: '#03386E',
               inactiveTintColor: '#999',
-              // inactiveBackgroundColor: 'red',
-              // activeBackgroundColor: 'green',
             }}
           >
             <Tab.Screen name="Home" component={Home} options={{
               tabBarIcon: ({color}) => (<Ionicons name='home' size={25} color={color}/>)
             }}/>
             <Tab.Screen name="AbasteceAi" component={AbasteceAi} options={{
-
+              tabBarBadge: 4,
+              tabBarBadgeStyle: {
+                backgroundColor: '#3d9be9',
+              },
               title: 'Abastece aí',
               tabBarIcon: ({color}) => (<MaterialIcons name='local-gas-station' size={25} color={color}/>)
             }}/>
