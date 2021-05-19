@@ -7,13 +7,13 @@ export const MenuButtonContainer = styled.TouchableOpacity`
   justify-content: center;
   align-items: center;
   border-radius: 30px;
-  border-color: #A5B2BB;
+  border-color: ${props => props.theme.buttonColor};
   border-width: 1px;
   margin-right: 15px;
 `;
 
 export const Icon = styled(FeatherIcons)`
-  color: #A5B2BB;
+  color: ${props => props.theme.buttonColor};
 `;
 
 export const NotificationBadge = styled.View`

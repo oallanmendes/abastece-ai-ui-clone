@@ -11,6 +11,7 @@ interface ImageProps {
 }
 
 export const ScrollView = styled.ScrollView`
+  background-color: ${props => props.theme.background};
 `;
 
 export const Header = styled.View`
@@ -31,7 +32,7 @@ export const Title = styled.Text`
     font-size: 24px;
     margin-left: 25px;
     margin-top: 25px;
-    color: #03386E;
+    color: ${props => props.theme.primary};
     font-weight: bold;
   `
 
@@ -68,19 +69,19 @@ export const CardImage = styled.Image`
 export const CardHeader = styled.Text`
   margin-top: 40px;
   font-size: 18px;
-  color: #EECE46;
+  color: ${props => props.theme.secondary};
   font-weight: bold;
 `
 
 export const CardDescription = styled.Text`
   margin-top: 20px;
   font-size: 14px;
-  color: #ffffff;
+  color: ${props => props.theme.tertiary};
   font-weight: bold;
 `
 
 export const News = styled.View`
-  background-color: #F7C809;
+  background-color: ${props => props.theme.secondary};
   flex: 1;
   padding-bottom: 50px;
 `;
@@ -105,7 +106,6 @@ export const NewsImage = styled.Image<ImageProps>`
     props.index === 0 &&
     css`
       margin-left: 25px;
-      background-color: #266BAC;
   `}
   ${props =>
     props.index === props.length - 1 &&
