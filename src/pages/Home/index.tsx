@@ -3,6 +3,8 @@ import {
   FlatList,
   Alert,
   Text,
+  StatusBar,
+  SafeAreaView,
 } from 'react-native';
 
 import {
@@ -19,10 +21,11 @@ import {
   NewsImage,
 } from './styles';
 
-// import { Icon, NotificationBadge, MenuButtonContainer, NotificationBadgeNumber } from '../../components/MenuButton/styles';
 import MenuButton from '../../components/MenuButton';
+import { useColorScheme } from 'react-native-appearance';
 
-export default function Home() {  
+export default function Home({navigation}) {  
+  const theme = useColorScheme();
   const data = [
     {
       id: 1,
@@ -86,6 +89,8 @@ export default function Home() {
 
   return (
     <>
+    <StatusBar barStyle={theme !== 'dark' ? 'dark-content' : 'light-content'}/>
+    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}} />
     <ScrollView
       showsVerticalScrollIndicator={false}
     >
