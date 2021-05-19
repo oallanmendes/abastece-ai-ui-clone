@@ -30,7 +30,6 @@ export default function Home() {
       description: 'Concorra a 10 Corollas híbridos e milhares de créditos nos Postos Ipiranga',
       active: true,
       color: '#3d9be9',
-      image: 'https://media-exp1.licdn.com/dms/image/C4D0BAQESXQgORRUmEw/company-logo_200_200/0/1600193498075?e=1629331200&v=beta&t=Am3l3D9qEOcLid3nGf_AgpDaSTJojA7l3FDyRYbOXoU',
     },
     {
       id: 2,
@@ -38,7 +37,6 @@ export default function Home() {
       description: 'Realize transferências 24h e sem taxas',
       active: false,
       color: '#15588f',
-      image: 'https://media-exp1.licdn.com/dms/image/C4D0BAQESXQgORRUmEw/company-logo_200_200/0/1600193498075?e=1629331200&v=beta&t=Am3l3D9qEOcLid3nGf_AgpDaSTJojA7l3FDyRYbOXoU',
     },
     {
       id: 3,
@@ -46,7 +44,6 @@ export default function Home() {
       description: 'Troque seus Km por descontos exclusivos',
       active: false,
       color: '#15588f',
-      image: 'https://media-exp1.licdn.com/dms/image/C4D0BAQESXQgORRUmEw/company-logo_200_200/0/1600193498075?e=1629331200&v=beta&t=Am3l3D9qEOcLid3nGf_AgpDaSTJojA7l3FDyRYbOXoU',
     },
     {
       id: 4,
@@ -54,7 +51,6 @@ export default function Home() {
       description: 'Pague em estabelecimentos e ganhe cashback',
       active: false,
       color: '#15588f',
-      image: 'https://media-exp1.licdn.com/dms/image/C4D0BAQESXQgORRUmEw/company-logo_200_200/0/1600193498075?e=1629331200&v=beta&t=Am3l3D9qEOcLid3nGf_AgpDaSTJojA7l3FDyRYbOXoU',
     },
   ]
 
@@ -116,7 +112,7 @@ export default function Home() {
                 onPress={() => {
                   Alert.alert('Mensagem', `"O card ${item.name}" foi clicado`)
                 }}>
-                  <CardImage source={{uri: item.image}}/>
+                  <CardImage source={require('../../assets/ipiranga.jpeg')}/>
                   <CardHeader>{item.name}</CardHeader>
                   <CardDescription
                     numberOfLines={3}
