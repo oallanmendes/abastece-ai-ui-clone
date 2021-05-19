@@ -86,7 +86,9 @@ export default function Home() {
 
   return (
     <>
-    <ScrollView>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+    >
         <Header>
           <Logo source={require('../../assets/logo.png')}/>
           <MenuButton
