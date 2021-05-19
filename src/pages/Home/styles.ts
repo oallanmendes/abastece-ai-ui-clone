@@ -1,6 +1,4 @@
 import styled, { css } from 'styled-components/native';
-import FeatherIcons from '@expo/vector-icons/Feather';
-
 interface CardProps {
   index: number;
   length: number;
@@ -10,8 +8,6 @@ interface ImageProps {
   index: number;
   length: number;
 }
-
-export const ScrollView = styled.View``;
 
 export const Header = styled.View`
   display: flex;
@@ -27,31 +23,6 @@ export const Logo = styled.Image`
   border-radius: 5px;
 `;
 
-export const MenuButton = styled.TouchableOpacity`
-  width: 35px;
-  height: 35px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  border-color: #A5B2BB;
-  border-width: 1px;
-  margin-right: 15px;
-`;
-
-export const Icon = styled(FeatherIcons)`
-  color: #A5B2BB;
-`;
-
-export const NotificationBadge = styled.View`
-  width: 12px;
-  height: 12px;
-  background-color: #FF0042;
-  position: absolute;
-  right: -2px;
-  top: -2px;
-  border-radius: 10px;
-`;
-
 export const Title = styled.Text`
     font-size: 24px;
     margin-left: 25px;
@@ -61,7 +32,7 @@ export const Title = styled.Text`
   `
 
 export const Card = styled.TouchableOpacity<CardProps> `
-  flex: 1%;     
+  flex: 1;     
   margin-left: 15px;
   height: 310px;
   width: 200px;

@@ -8,19 +8,19 @@ import {
 
 import {
   Logo,
-  MenuButton,
   Header,
   Title,
   Card,
   CardHeader,
   CardDescription,
   CardImage,
-  Icon,
-  NotificationBadge,
   News,
   NewsHeader,
   NewsImage,
 } from './styles';
+
+// import { Icon, NotificationBadge, MenuButtonContainer, NotificationBadgeNumber } from '../../components/MenuButton/styles';
+import MenuButton from '../../components/MenuButton';
 
 export default function Home() {  
   const data = [
@@ -93,15 +93,14 @@ export default function Home() {
     <ScrollView>
         <Header>
           <Logo source={require('../../assets/logo.png')}/>
-          <MenuButton onPress={() => {
-            Alert.alert('Mensagem', 'Leva ao seu perfil')
-          }}>
-          <Icon
-            name={'menu'}
-            size={20}
+          <MenuButton
+            icon={'menu'}
+            iconSize={20}
+            notificationNumber={3}
+            onPress={() => {
+              Alert.alert('Mensagem', 'Teste')
+            }}
           />
-          <NotificationBadge />
-          </MenuButton>
         </Header>
         <Title>O que você deseja fazer?</Title>
         <FlatList
