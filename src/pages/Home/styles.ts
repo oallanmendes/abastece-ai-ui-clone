@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/native';
+
 interface CardProps {
   index: number;
   length: number;
@@ -8,6 +9,9 @@ interface ImageProps {
   index: number;
   length: number;
 }
+
+export const ScrollView = styled.ScrollView`
+`;
 
 export const Header = styled.View`
   display: flex;

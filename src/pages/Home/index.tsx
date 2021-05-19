@@ -3,10 +3,10 @@ import {
   FlatList,
   Alert,
   Text,
-  ScrollView,
 } from 'react-native';
 
 import {
+  ScrollView,
   Logo,
   Header,
   Title,
