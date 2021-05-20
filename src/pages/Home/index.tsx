@@ -3,8 +3,6 @@ import {
   FlatList,
   Alert,
   Text,
-  StatusBar,
-  SafeAreaView,
 } from 'react-native';
 
 import {
@@ -22,10 +20,8 @@ import {
 } from './styles';
 
 import MenuButton from '../../components/MenuButton';
-import { useColorScheme } from 'react-native-appearance';
 
 export default function Home({navigation}) {  
-  const theme = useColorScheme();
   const data = [
     {
       id: 1,
@@ -88,9 +84,6 @@ export default function Home({navigation}) {
   ]
 
   return (
-    <>
-    <StatusBar barStyle={theme !== 'dark' ? 'dark-content' : 'light-content'}/>
-    <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}} />
     <ScrollView
       showsVerticalScrollIndicator={false}
     >
@@ -173,6 +166,5 @@ export default function Home({navigation}) {
           />
         </News>
     </ScrollView>
-    </>
   );
 }

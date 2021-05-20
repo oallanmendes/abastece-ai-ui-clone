@@ -9,5 +9,5 @@ export const View = styled.View`
 
 export const Title = styled.Text`
   font-size: 30px;
-  color: #000;
+  color: ${props => props.theme.primary};
 `;

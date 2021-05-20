@@ -9,15 +9,5 @@ export const View = styled.View`
 
 export const Title = styled.Text`
   font-size: 30px;
-  color: #000;
-`;
-
-export const Button = styled.TouchableOpacity`
-  background-color: #3d9be9;
-  padding: 20px;
-`;
-
-export const ButtonText = styled.Text`
-  color: #fff;
-  font-size: 30px;
+  color: ${props => props.theme.primary};
 `;
