@@ -26,6 +26,7 @@ export default function App() {
             initialRouteName={'Home'}
             backBehavior={'history'}
             tabBarOptions={{
+              allowFontScaling: true,
               activeTintColor: '#03386E',
               inactiveTintColor: '#999',
             }}
@@ -38,7 +39,7 @@ export default function App() {
               tabBarBadgeStyle: {
                 backgroundColor: '#3d9be9',
               },
-              title: 'Abastece aí',
+              title: 'Abastece aí Vandemberg',
               tabBarIcon: ({color}) => (<MaterialIcons name='local-gas-station' size={25} color={color}/>)
             }}/>
             <Tab.Screen name="KM" component={KM} options={{
