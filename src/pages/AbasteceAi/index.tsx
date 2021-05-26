@@ -3,6 +3,7 @@ import {
   FlatList,
   Alert,
   Text,
+  View,
 } from 'react-native';
 
 import {
@@ -15,8 +16,16 @@ import {
   Icon,
   PumpUpButton,
   PumpUpButtonText,
-  Story,
+  LastSupplies,
   Title,
+  SupplieCard,
+  SupplieCardCashback,
+  SupplieCardCategory,
+  SupplieCardDate,
+  SupplieCardDescription,
+  SupplieCardPrice,
+  IconSupplie,
+  IconPlacer,
 } from './styles';
 
 import MenuButton from '../../components/MenuButton';
@@ -44,14 +53,44 @@ export default function Home({navigation}) {
         </BalanceContainer> 
 
         <PumpUpButton>
-          {/* TODO */}
-          <Icon key={''}/>
+          <Icon name="local-gas-station" size={30}/>
           <PumpUpButtonText>Abastecer</PumpUpButtonText>
         </PumpUpButton>
 
-        <Story>
+        <LastSupplies>
             <Title>{`Veja os postos mais\npróximos`}</Title>
-        </Story>
+            <Title>Últimos abastecimentos</Title>
+
+            <SupplieCard>
+              <IconPlacer>
+              <IconSupplie name="local-gas-station" size={20}/>
+              </IconPlacer>
+              <View>
+                <SupplieCardCategory>Abastecimento</SupplieCardCategory>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                  <SupplieCardDescription>Flashcar Auto Posto Ltda</SupplieCardDescription>
+                  <SupplieCardPrice>R$ 145,62</SupplieCardPrice>
+                </View>
+                <SupplieCardDate>09/mai às 17h11</SupplieCardDate>
+                <SupplieCardCashback>R$ 5,45 de cashback</SupplieCardCashback>
+              </View>
+            </SupplieCard>
+
+            <SupplieCard>
+              <IconPlacer>
+              <IconSupplie name="local-gas-station" size={20}/>
+              </IconPlacer>
+              <View>
+                <SupplieCardCategory>Abastecimento</SupplieCardCategory>
+                <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+                  <SupplieCardDescription>Flashcar Auto Posto Ltda</SupplieCardDescription>
+                  <SupplieCardPrice>R$ 145,62</SupplieCardPrice>
+                </View>
+                <SupplieCardDate>09/mai às 17h11</SupplieCardDate>
+                <SupplieCardCashback>R$ 5,45 de cashback</SupplieCardCashback>
+              </View>
+            </SupplieCard>
+        </LastSupplies>
     </ScrollView>
   );
 }

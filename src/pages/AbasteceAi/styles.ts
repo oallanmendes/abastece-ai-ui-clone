@@ -1,15 +1,5 @@
-import styled from 'styled-components/native';
+import styled, {css} from 'styled-components/native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
-
-interface CardProps {
-  index: number;
-  length: number;
-}
-
-interface ImageProps {
-  index: number;
-  length: number;
-}
 
 export const ScrollView = styled.ScrollView`
   background-color: #3d9be9;
@@ -49,7 +39,8 @@ export const BalanceNumber = styled.Text`
 export const PumpUpButton = styled.TouchableOpacity`
   background-color: ${props => props.theme.secondary};
   flex-direction: row;
-  padding: 20px;
+  padding: 10px;
+  align-items: center;
   justify-content: center;
   border-radius: 20px;
   margin-left: 25px;
@@ -58,7 +49,7 @@ export const PumpUpButton = styled.TouchableOpacity`
 `;
 
 export const Icon = styled(MaterialIcons)`
-  color: ${props => props.theme.primary};
+  margin-right: 10px;
 `;
 
 export const PumpUpButtonText = styled.Text`
@@ -66,18 +57,53 @@ export const PumpUpButtonText = styled.Text`
   font-weight: bold;
 `;
 
-export const Story = styled.View`
+export const LastSupplies = styled.View`
   background-color: ${props => props.theme.background};
   margin-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  flex: 1;
 `;
 
 export const Title = styled.Text`
   font-size: 24px;
-  margin-left: 25px;
   margin-top: 50px;
   color: ${props => props.theme.primary};
   font-weight: bold;
   margin-bottom: 50px;
 `
+
+export const SupplieCard = styled.View`
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 50px;
+`;
+
+export const IconPlacer = styled.View`
+  background-color: ${props => props.theme.primary};
+  align-items: center;
+  padding: 8px;
+  margin-right: 10px;
+  border-radius: 100px;
+`;
+
+export const IconSupplie = styled(MaterialIcons)`
+  color: #fff;
+`;
+
+export const SupplieCardCategory = styled.Text``;
+export const SupplieCardDescription = styled.Text`
+  font-weight: bold;
+`;
+export const SupplieCardPrice = styled.Text`
+  font-weight: bold;
+`;
+export const SupplieCardDate = styled.Text`
+  font-size: 10px;
+`;
+export const SupplieCardCashback = styled.Text`
+  margin-top: 8px;
+  color: green;
+`;
