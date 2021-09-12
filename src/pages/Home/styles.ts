@@ -40,7 +40,7 @@ export const Card = styled.TouchableOpacity<CardProps> `
   flex: 1;     
   margin-left: 15px;
   height: 310px;
-  width: 200px;
+  /* width: 200px; */
   border-radius: 20px;
   padding-left: 30px;
   padding-top: 30px;
@@ -96,9 +96,6 @@ export const NewsHeader = styled.Text`
 
 export const NewsImage = styled.Image<ImageProps>`
   border-radius: 15px;
-  width: 325px;
-  max-width: 325px;
-  height: 200px;
   margin-left: 15px;
   margin-top: 40px;
 

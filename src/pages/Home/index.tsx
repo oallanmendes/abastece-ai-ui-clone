@@ -3,6 +3,7 @@ import {
   FlatList,
   Alert,
   Text,
+  Dimensions,
 } from 'react-native';
 
 import {
@@ -21,7 +22,8 @@ import {
 
 import MenuButton from '../../components/MenuButton';
 
-export default function Home({navigation}) {  
+export default function Home({ navigation }) {
+  const { width, height } = Dimensions.get('screen')
   const data = [
     {
       id: 1,
@@ -87,84 +89,95 @@ export default function Home({navigation}) {
     <ScrollView
       showsVerticalScrollIndicator={false}
     >
-        <Header>
-          <Logo source={require('../../assets/logo.png')}/>
-          <MenuButton
-            icon={'menu'}
-            iconSize={20}
-            notificationNumber={3}
-            onPress={() => {
-              Alert.alert('Mensagem', 'Teste')
+      <Header>
+        <Logo source={require('../../assets/logo.png')} />
+        <MenuButton
+          icon={'menu'}
+          iconSize={20}
+          notificationNumber={3}
+          onPress={() => {
+            Alert.alert('Mensagem', 'Teste')
+          }}
+        />
+      </Header>
+      <Title>O que você deseja fazer?</Title>
+      <FlatList
+        data={data}
+        keyExtractor={(item) => String(item.id)}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        snapToInterval={(width * 0.5) + 15}
+        decelerationRate={0}
+        style={{ marginTop: 80, marginBottom: 50 }}
+        renderItem={({ item, index }) => (
+          <Card
+            index={index}
+            length={data.length}
+            style={{
+              width: width * 0.5,
             }}
-          />
-        </Header>
-        <Title>O que você deseja fazer?</Title>
+            onPress={() => {
+              Alert.alert('Mensagem', `"O card ${item.name}" foi clicado`)
+            }}>
+            <CardImage source={require('../../assets/ipiranga.jpeg')} />
+            <CardHeader>{item.name}</CardHeader>
+            <CardDescription
+              numberOfLines={3}
+              minimumFontScale={0.75}
+              adjustsFontSizeToFit={true}
+            >{item.description}</CardDescription>
+          </Card>
+        )}
+      />
+      <News>
+        <NewsHeader>{`Descubra onde\nganhar cashback`}</NewsHeader>
         <FlatList
-          data={data}
+          data={news}
           keyExtractor={(item) => String(item.id)}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
-          style={{marginTop: 80, marginBottom: 50}}
+          snapToInterval={width * 0.8}
+          decelerationRate={0}
           renderItem={({ item, index }) => (
-              <Card
-                index={index}
-                length={data.length}
-                onPress={() => {
-                  Alert.alert('Mensagem', `"O card ${item.name}" foi clicado`)
-                }}>
-                  <CardImage source={require('../../assets/ipiranga.jpeg')}/>
-                  <CardHeader>{item.name}</CardHeader>
-                  <CardDescription
-                    numberOfLines={3}
-                    minimumFontScale={0.75}
-                    adjustsFontSizeToFit={true}
-                  >{item.description}</CardDescription>
-              </Card>
+            <NewsImage
+              index={index}
+              length={news.length}
+              style={{
+                width: width * 0.8,
+                height: height * 0.3,
+              }}
+              source={{ uri: item.image }}
+            />
           )}
         />
-        <News>
-          <NewsHeader>{`Descubra onde\nganhar cashback`}</NewsHeader>
-          <FlatList
-            data={news}
-            keyExtractor={(item) => String(item.id)}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => (
-                <NewsImage
-                  index={index}
-                  length={news.length}
-                  source={{uri: item.image}}
-                />
-            )}
-          />
-        </News>
+      </News>
 
-        <News style={{backgroundColor: '#002D64'}}>
-          <NewsHeader style={{color: '#fff'}}>{`Aqui tem cashback\npra você aproveitar!`}</NewsHeader>
-          <Text 
-            style={{
-              fontSize: 18,
-              fontWeight: '500',
-              marginLeft: 25,
-              color: '#fff',
-              maxWidth: 320,
-              marginTop: 20,
-            }}
-          >Conheça os nossos parceiros e troque seus Km de vantagens por cashback de verdade!</Text>
-          <FlatList
-            data={partners}
-            keyExtractor={(item) => String(item.id)}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => (
-                <NewsImage
-                  index={index}
-                  length={partners.length}
-                  source={{uri: item.image}}
-                />
-            )}
-          />
-        </News>
+      <News style={{ backgroundColor: '#002D64' }}>
+        <NewsHeader style={{ color: '#fff' }}>{`Aqui tem cashback\npra você aproveitar!`}</NewsHeader>
+        <Text
+          style={{
+            fontSize: 18,
+            fontWeight: '500',
+            marginLeft: 25,
+            color: '#fff',
+            maxWidth: 320,
+            marginTop: 20,
+          }}
+        >Conheça os nossos parceiros e troque seus Km de vantagens por cashback de verdade!</Text>
+        <FlatList
+          data={partners}
+          keyExtractor={(item) => String(item.id)}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => (
+            <NewsImage
+              index={index}
+              length={partners.length}
+              source={{ uri: item.image }}
+            />
+          )}
+        />
+      </News>
     </ScrollView>
   );
 }
