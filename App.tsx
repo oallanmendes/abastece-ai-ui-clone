@@ -12,10 +12,12 @@ export default function App() {
   const deviceTheme = useColorScheme();
   const theme = deviceTheme !== 'light' ? themes.dark : themes.light;
 
+  console.log("Teste app.tsx");
+
   return (
     <AppearanceProvider>
       <ThemeProvider theme={theme}>
-        <SafeAreaView style={{backgroundColor: theme.background}} />
+        <SafeAreaView style={{ backgroundColor: theme.background }} />
         <NavigationContainer>
           <StatusBar barStyle={deviceTheme !== 'light' ? 'light-content' : 'dark-content'} />
           <AppRoutes />
