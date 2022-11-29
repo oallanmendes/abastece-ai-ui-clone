@@ -5,4 +5,6 @@ export default {
   secondary: '#EECE46',
   tertiary: '#ffffff',
   buttonColor: '#ffffff',
+  icons: "#15588f",
+  green: "#7EFF78",
 }

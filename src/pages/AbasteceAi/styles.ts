@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export const ScrollView = styled.ScrollView`
@@ -90,7 +90,7 @@ export const IconPlacer = styled.View`
 `;
 
 export const IconSupplie = styled(MaterialIcons)`
-  color: #fff;
+  color: ${props => props.theme.icons};
 `;
 
 export const SupplieCardCategory = styled.Text``;
@@ -105,5 +105,5 @@ export const SupplieCardDate = styled.Text`
 `;
 export const SupplieCardCashback = styled.Text`
   margin-top: 8px;
-  color: green;
+  color: ${props => props.theme.green};
 `;
