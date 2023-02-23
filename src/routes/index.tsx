@@ -21,6 +21,7 @@ const AppRoutes: React.FC = () => {
     <Tab.Navigator
       initialRouteName={'Home'}
       backBehavior={'history'}
+      tabBar={ }
       tabBarOptions={{
         adaptive: false,
         tabStyle: {

@@ -7,4 +7,6 @@ export default {
   buttonColor: '#ffffff',
   icons: "#15588f",
   green: "#7EFF78",
+  black: "#ECEADD",
+  brand: '#03386E',
 }

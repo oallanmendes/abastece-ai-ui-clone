@@ -4,6 +4,7 @@ import {
   Alert,
   Text,
   View,
+  StatusBar,
 } from 'react-native';
 
 import {

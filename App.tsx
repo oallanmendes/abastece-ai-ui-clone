@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView style={{ backgroundColor: theme.background }} />
+      <SafeAreaView style={{ backgroundColor: 'theme.background' }} />
       <NavigationContainer>
         <StatusBar barStyle={deviceTheme !== 'light' ? 'light-content' : 'dark-content'} />
         <AppRoutes />

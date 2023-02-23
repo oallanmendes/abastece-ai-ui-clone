@@ -50,10 +50,11 @@ export const PumpUpButton = styled.TouchableOpacity`
 
 export const Icon = styled(MaterialIcons)`
   margin-right: 10px;
+  color: ${props => props.theme.brand};
 `;
 
 export const PumpUpButtonText = styled.Text`
-  color: ${props => props.theme.primary};
+  color: ${props => props.theme.brand};
   font-weight: bold;
 `;
 
@@ -93,15 +94,20 @@ export const IconSupplie = styled(MaterialIcons)`
   color: ${props => props.theme.icons};
 `;
 
-export const SupplieCardCategory = styled.Text``;
+export const SupplieCardCategory = styled.Text`
+  color: ${props => props.theme.black};
+`;
 export const SupplieCardDescription = styled.Text`
   font-weight: bold;
+  color: ${props => props.theme.black}
 `;
 export const SupplieCardPrice = styled.Text`
   font-weight: bold;
+  color: ${props => props.theme.black}
 `;
 export const SupplieCardDate = styled.Text`
   font-size: 10px;
+  color: ${props => props.theme.black}
 `;
 export const SupplieCardCashback = styled.Text`
   margin-top: 8px;

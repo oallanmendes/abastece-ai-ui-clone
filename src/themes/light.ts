@@ -6,5 +6,7 @@ export default {
   tertiary: '#ffffff',
   buttonColor: '#A5B2BB',
   icons: "#ffffff",
-  green: "#4CA958"
+  green: "#4CA958",
+  black: "#202020",
+  brand: '#03386E',
 }
